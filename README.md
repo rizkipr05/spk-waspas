@@ -112,6 +112,18 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek di lokal:
    ```
    Akses aplikasi di `http://localhost:8000`.
 
-## 📄 Lisensi
+## � Dokumentasi API (Postman)
+
+Proyek ini menyertakan koleksi Postman untuk pengujian API. File koleksi bernama `api(postman).json` terletak di root direktori proyek.
+
+**Cara Menggunakan:**
+
+1. Buka aplikasi **Postman**.
+2. Klik tombol **Import** di pojok kiri atas.
+3. Drag & drop file `api(postman).json` atau pilih file tersebut dari direktori proyek.
+4. Koleksi akan muncul di sidebar Postman.
+5. Anda dapat langsung menjalankan request yang tersedia (pastikan server lokal berjalan).
+
+## �📄 Lisensi
 
 Proyek ini dibuat untuk keperluan akademik dan pembelajaran.
