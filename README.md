@@ -124,6 +124,90 @@ Proyek ini menyertakan koleksi Postman untuk pengujian API. File koleksi bernama
 4. Koleksi akan muncul di sidebar Postman.
 5. Anda dapat langsung menjalankan request yang tersedia (pastikan server lokal berjalan).
 
+### 📡 Detail Endpoint API
+
+Berikut adalah daftar endpoint yang tersedia dalam API ini:
+
+#### 🔐 Auth
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `POST` | `/api/login` | Login user & dapatkan token |
+| `GET` | `/api/me` | Mendapatkan info user yang sedang login |
+| `POST` | `/api/logout` | Logout & invalidasi token |
+
+#### 🧑‍💻 Staff
+**Dashboard**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/staff/dashboard` | Statistik dashboard staff |
+
+**Influencers**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/staff/influencers` | List semua influencer |
+| `POST` | `/api/staff/influencers` | Tambah influencer baru |
+| `GET` | `/api/staff/influencers/{id}` | Detail influencer |
+| `PUT` | `/api/staff/influencers/{id}` | Update data influencer |
+| `DELETE` | `/api/staff/influencers/{id}` | Hapus influencer |
+
+**Criteria (Kriteria)**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/staff/criteria` | List kriteria |
+| `POST` | `/api/staff/criteria` | Tambah kriteria baru |
+| `PUT` | `/api/staff/criteria/{id}` | Update kriteria |
+| `DELETE` | `/api/staff/criteria/{id}` | Hapus kriteria |
+
+**WASPAS**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/staff/waspas` | List riwayat perhitungan |
+| `GET` | `/api/staff/waspas/{id}` | Detail hasil perhitungan |
+| `POST` | `/api/staff/waspas/item/{id}/toggle` | Pilih/Batal pilih influencer (Endorse) |
+
+#### 👨‍💼 Manager
+**Dashboard**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/manager/dashboard` | Statistik dashboard manager |
+
+**Staff Management**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/manager/staff` | List akun staff |
+| `POST` | `/api/manager/staff` | Tambah akun staff |
+| `PUT` | `/api/manager/staff/{id}` | Update akun staff |
+| `DELETE` | `/api/manager/staff/{id}` | Hapus akun staff |
+
+**Monitoring**
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/manager/waspas` | Lihat semua hasil perhitungan staff |
+| `GET` | `/api/manager/endorse-history` | Lihat daftar influencer yang terpilih |
+
+### 📂 Struktur File API
+
+Lokasi file penting terkait implementasi API:
+
+```
+d:\Spk-web
+├── routes
+│   └── api.php                  # Definisi Route API
+├── app
+│   └── Http
+│       └── Controllers
+│           └── Api              # Controller Logic API
+│               ├── AuthController.php
+│               ├── Staff
+│               │   ├── DashboardController.php
+│               │   ├── InfluencerController.php
+│               │   └── ...
+│               └── Manager
+│                   ├── DashboardController.php
+│                   ├── StaffController.php
+│                   └── ...
+```
+
 ## �📄 Lisensi
 
 Proyek ini dibuat untuk keperluan akademik dan pembelajaran.
