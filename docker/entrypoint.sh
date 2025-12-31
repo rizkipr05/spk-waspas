@@ -53,8 +53,12 @@ grep "^APP_KEY=" /var/www/html/.env || {
 }
 
 # Run migrations
-echo "Running migrations..."
-php artisan migrate --force --no-interaction || exit 1
+if [ "${RUN_MIGRATIONS:-true}" = "true" ]; then
+    echo "Running migrations..."
+    php artisan migrate --force --no-interaction || exit 1
+else
+    echo "Skipping migrations (RUN_MIGRATIONS=false)"
+fi
 
 # Clear and cache configurations
 php artisan config:clear || true
